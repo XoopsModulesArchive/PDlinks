@@ -1,0 +1,7 @@
+This Module is based on the WF-Downloads 2.05a Module.
+We have fixed many bugs and deleted some features, on the other hand we have some interesting new features in it.
+This new features make it easier for you to administrate the module.
+This Module is specially done for the use with Links.
+
+You can update from weblinks or My-Links to PD-Links, all you have to do is to call the update.php that is in your pdlinks folder - IMPORTANT you cant run the script in the folder update directly, you have to start the update.php.
+As always you should do a backup before updating, after the update-process was successfull you have to uninstall my-links or weblinks - after that update weblinks or my-links are unable to run anymore.

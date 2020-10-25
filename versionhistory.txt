@@ -1,0 +1,39 @@
+     - PD Links 1.0 -
+---------------------------------------------------
+[removed] Limitations featur
+[removed] Lizenz featur
+[removed] requirments featur
+[removed] mirror featur
+[removed] price feature
+[removed] review feature
+[removed] dhistory feature
+[removed] plattform feature
+[removed] size feature
+[removed] version feature
+
+[added] intelligent broken-link edit feature
+[added] auto suffix when you set that a news for that download should be published (when you dont set a specific name for the news)
+[added] you can post a news from a download up to 3 news-moduls
+[added] gijoes myblocksadmin 0.27
+[added] sitemap plugin (without permission check at the moment)
+[added] newest links will be listed on the module-start page
+[added] update-script (from weblinks or my-links to pd-links)
+[added] you have a extra table where you can see what link is expired (admin-side)
+[added] special link icon (user-side)
+[added] Extensible waiting contents Plugin
+
+[fixed] submit.php (user-side)
+[fixed] modifying downloads now works (user-side)
+[fixed] uploading pictures now works (admin-side)
+[fixed] Recommend (tell a friend) now works correctly
+[fixed] Permissions-System now works
+[fixed] and many other bugs
+
+[changed] publisher is no longer a field where you can type in any kind of name, publisher now shows the person who have approved the download (only admin's will see that info)
+[changed] brokenfile.php - deleted some not important and useless features
+[changed] many language files changed done
+[changed] some templates corrections are done
+[changed] all blocks are clonable now
+[changed] changed the way how permissions work for submitting new links
+[changed] categorie icons (user-side)
+[changed] many minor changes

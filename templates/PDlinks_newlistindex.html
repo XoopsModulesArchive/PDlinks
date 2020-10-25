@@ -1,0 +1,13 @@
+<{if count($dailylinks) gt 0}> 
+<center><h4><{$smarty.const._MD_PDD2_LATESTLIST}></h4></center>
+<table width="100%" cellspacing="0" cellpadding="10" border="0">
+<tr>
+<td width="100%">
+  <!-- Start link loop -->
+  <{section name=i loop=$file}>
+    <{include file="db:PDlinks_linkload.html" link=$file[i]}>
+  <{/section}>
+  <!-- End link loop -->
+</td></tr>
+</table>
+<{/if}> 

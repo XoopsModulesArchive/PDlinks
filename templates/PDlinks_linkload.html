@@ -1,0 +1,69 @@
+<{if $show_categort_title === true}>
+ <div style="margin-bottom: 4px;"><b><{$smarty.const._MD_PDD2_CATEGORYC}></b><{$link.category}></div>
+<{/if}>
+
+<table width="100%" cellspacing="1" cellpadding="2">
+  <tr>
+    <td width="82%" align="left">
+	 <font color="#2F5376"><b><{$link.title}></b></font> <{$link.icons}>
+	</td>
+    <td width="18%" align="right" nowrap="nowrap">
+	 <a href="<{$xoops_url}>/modules/PDlinks/singlefile.php?cid=<{$link.cid}>&lid=<{$link.id}>">
+	 	<span class="itemTitle"><{$smarty.const._MD_PDD2_VIEWDETAILS}></span></a>
+	</td>
+  </tr>
+  <tr>
+    <td height="1" colspan="2" bgcolor="#000000"></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+		 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  		 <tr class="even">
+    	  <td width="50%"><small><strong><{$smarty.const._MD_PDD2_SUBMITTER}>:</strong> <{$link.submitter}> 
+		  	<{$link.adminlink}></small></td>
+    	   <td><div align="right"><small><b><{$lang_subdate}>:</b>&nbsp;&nbsp;
+		   	<{$link.updated}></small></div></td>
+        </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+		  <td width="65%" height = "133" valign="top">
+        	<{if $show_screenshot === true}>
+				<{if $link.screenshot_full != ''}>
+				<div >
+					<a href="<{$xoops_url}>/<{$shots_dir}>/<{$link.screenshot_full}>" target="_blank">
+						<img src="<{$link.screenshot_thumb}>" alt="" vspace="3" hspace="7" align="right" style='border: 1px solid black'>
+					</a>
+				</div>
+			<{/if}>
+			<{/if}>
+			<div style="margin-left: 6px;" align="justify"><a href="<{$xoops_url}>/modules/PDlinks/visit.php?cid=<{$link.cid}>&amp;lid=<{$link.id}>" target="_blank">
+				<img src="<{$xoops_url}>/modules/PDlinks/images/icon/links.gif" alt="" align="absmiddle"> 
+					<{$smarty.const._MD_PDD2_linkNOW}></a></div>
+			<br>
+			<div style="margin-left: 6px;" align="justify"><{$link.description}></div>
+		  </td>
+        <td width="25%">
+		 <div class="outer"><div class="even">
+		   <small>
+			<div><b><{$smarty.const._MD_PDD2_linkHITS}></b><{$link.hits}></div>
+		  </small></div></div><br>
+		 <div class = "outer">
+			<small><b><{$smarty.const._MD_PDD2_RATINGC}></b>&nbsp;<img src="<{$xoops_url}>/modules/PDlinks/images/icon/<{$link.rateimg}>" alt="" align="absmiddle">&nbsp;&nbsp;(<{$link.votes}>)</small>
+		</div>
+		</td>
+      </tr>
+</table>
+  </tr>
+</table>
+    	  <div class="even" align="center"><small> 
+		   <a href="<{$xoops_url}>/modules/PDlinks/ratefile.php?cid=<{$link.cid}>&lid=<{$link.id}>">
+		   	<{$smarty.const._MD_PDD2_RATETHISFILE}></a> | 
+		   <a href="<{$xoops_url}>/modules/PDlinks/brokenfile.php?lid=<{$link.id}>">
+		   	<{$smarty.const._MD_PDD2_REPORTBROKEN}></a> | 
+		   <a target="_top" href="mailto:?subject=<{$link.mail_subject}>&body=<{$link.mail_body}>">
+		   	<{$smarty.const._MD_PDD2_TELLAFRIEND}></a> | 
+		   <a href="<{$xoops_url}>/modules/PDlinks/singlefile.php?cid=<{$link.cid}>&lid=<{$link.id}>">
+		   	<{$smarty.const._COMMENTS}> (<{$link.comments}>)</a>
+    	   </small></div><br>

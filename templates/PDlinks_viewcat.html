@@ -1,0 +1,86 @@
+<{if $catarray.imageheader != ""}>
+	<br><div align="center"><{$catarray.imageheader}></div><br>
+<{/if}>
+
+<div><{$description}></div><br>
+
+<div align="center" class="itemPermaLink"><{$catarray.letters}></div><br>
+<div align="center"><{$catarray.toolbar}></div><br>
+<div class="even"><b><{$category_path}></b></div><br>
+<{if $subcategories}>
+<fieldset><legend style="font-weight: bold; color: #639ACE;"><{$smarty.const._MD_PDD2_SUBCATLISTING}></legend>
+<div style="padding: 2px;">
+<div align= "left" style="margin-left: 5px; padding: 0px;">
+ <table width="80%">
+  <tr>
+   <{foreach item=subcat from=$subcategories}>
+    <td><a href="viewcat.php?cid=<{$subcat.id}>"><{$subcat.title}></a>&nbsp;(<{$subcat.totallinks}>)<br>
+	 <{if $subcat.infercategories}>
+	  &nbsp;&nbsp;<{$subcat.infercategories}>
+      <{/if}>
+	 </td>
+	 <{if $subcat.count is div by 2}>
+      </tr><tr>
+     <{/if}>
+   <{/foreach}>
+   </tr>
+ </table>    
+</div></fieldset>
+<br>
+<{/if}>
+<{if $show_links === true}> 
+<div align="center"><small>
+<b><{$smarty.const._MD_PDD2_SORTBY}></b>&nbsp;<{$smarty.const._MD_PDD2_TITLE}> (
+<a href="viewcat.php?cid=<{$category_id}>&orderby=titleA">
+<img src="images/up.gif" align="middle" alt=""></a>
+<a href="viewcat.php?cid=<{$category_id}>&orderby=titleD">
+<img src="images/down.gif" align="middle" alt=""></a>
+)
+&nbsp;
+<{$smarty.const._MD_PDD2_DATE}> (
+<a href="viewcat.php?cid=<{$category_id}>&orderby=dateA">
+<img src="images/up.gif" align="middle" alt=""></a>
+<a href="viewcat.php?cid=<{$category_id}>&orderby=dateD">
+<img src="images/down.gif" align="middle" alt=""></a>
+)
+&nbsp;
+<{$smarty.const._MD_PDD2_RATING}> (
+<a href="viewcat.php?cid=<{$category_id}>&orderby=ratingA">
+<img src="images/up.gif" align="middle" alt=""></a>
+<a href="viewcat.php?cid=<{$category_id}>&orderby=ratingD">
+<img src="images/down.gif" align="middle" alt=""></a>
+)
+&nbsp;
+<{$smarty.const._MD_PDD2_POPULARITY}> (
+<a href="viewcat.php?cid=<{$category_id}>&orderby=hitsA">
+<img src="images/up.gif" align="middle" alt="">
+</a><a href="viewcat.php?cid=<{$category_id}>&orderby=hitsD">
+<img src="images/down.gif" align="middle" alt=""></a>
+)
+<br>
+<b><{$lang_cursortedby}></b>
+</small></div>
+<br>
+<{/if}>
+
+<{if $page_nav === true}>
+<div><{$smarty.const._MD_PDD2_PAGES}>: <{$pagenav}></div><br>
+<{/if}>
+
+<table width="100%" cellspacing="0" cellpadding="10" border="0">
+ <tr>
+  <td width="100%">
+   <!-- Start link loop -->
+   <{section name=i loop=$file}>
+     <{include file="db:PDlinks_linkload.html" link=$file[i]}>
+   <{/section}>
+   <!-- End link loop -->
+  </td>
+ </tr>
+</table>
+
+<{if $page_nav === true}>
+<div align="right"><{$smarty.const._MD_PDD2_PAGES}>: <{$pagenav}></div>
+<{/if}>
+
+<{include file="db:system_notification_select.html"}>
